@@ -34,30 +34,49 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
+	<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-	<div id="container">
-		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'https://cakephp.org'); ?></h1>
-		</div>
-		<div id="content">
+	<body>
 
-			<?php echo $this->Flash->render(); ?>
+<!-- NAVBAR: barra de navegação no topo -->
+<nav class="navbar navbar-dark bg-dark mb-4">
+    <div class="container">
+        <a class="navbar-brand" href="/HTML/cakephp/posts">Meu Blog</a>
+        <div>
+            <?php if ($this->Session->read('Auth.User')): ?>
+                <span class="text-white me-3">
+                     <?php echo $this->Session->read('Auth.User.username'); ?>
+                </span>
+                <?php echo $this->Html->link(
+                    'Sair',
+                    array('controller' => 'users', 'action' => 'logout'),
+                    array('class' => 'btn btn-outline-light btn-sm')
+                ); ?>
+            <?php else: ?>
+                <?php echo $this->Html->link(
+                    'Login',
+                    array('controller' => 'users', 'action' => 'login'),
+                    array('class' => 'btn btn-outline-light btn-sm')
+                ); ?>
+            <?php endif; ?>
+        </div>
+    </div>
+</nav>
 
-			<?php echo $this->fetch('content'); ?>
-		</div>
-		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'https://cakephp.org/',
-					array('target' => '_blank', 'escape' => false, 'id' => 'cake-powered')
-				);
-			?>
-			<p>
-				<?php echo $cakeVersion; ?>
-			</p>
-		</div>
-	</div>
-	<?php echo $this->element('sql_dump'); ?>
+<!-- CONTAINER: centraliza e limita a largura do conteúdo -->
+<div class="container">
+
+    <?php echo $this->Flash->render(); ?>
+
+    <?php echo $this->fetch('content'); ?>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="text-center text-muted mt-5 py-3 border-top">
+    <p><?php echo $cakeVersion; ?></p>
+</footer>
 </body>
 </html>
