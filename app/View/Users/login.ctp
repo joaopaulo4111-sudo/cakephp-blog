@@ -29,6 +29,15 @@
                 <?php echo $this->Form->submit('Entrar', array('class' => 'btn btn-success w-100')); ?>
                 <?php echo $this->Form->end(); ?>
 
+                <div class="text-center mt-3">
+                    <p class="text-muted">Não tem uma conta?</p>
+                    <?php echo $this->Html->link(
+                        'Cadastrar novo usuário',
+                        array('controller' => 'users', 'action' => 'add'),
+                        array('class' => 'btn btn-outline-dark w-100')
+                    ); ?>
+                </div>
+
             </div>
         </div>
     </div>

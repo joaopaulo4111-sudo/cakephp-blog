@@ -9,11 +9,11 @@ class PostsController extends AppController {
 
     public function view($id = null) {
         if (!$id) {
-            throw new NotFoundException(__('Invalid post'));
+            throw new NotFoundException(__('Post inválido'));
         }
         $post = $this->Post->findById($id);
         if (!$post) {
-            throw new NotFoundException(__('Invalid post'));
+            throw new NotFoundException(__('Post inválido'));
         }
         $this->set('post', $post);
     }
@@ -23,28 +23,28 @@ class PostsController extends AppController {
             $this->request->data['Post']['user_id'] = $this->Auth->user('id');
             $this->Post->create();
             if ($this->Post->save($this->request->data)) {
-                $this->Flash->success(__('Your post has been saved.'));
+                $this->Flash->success(__('Seu post foi salvo.'));
                 return $this->redirect(array('action' => 'index'));
             }
-            $this->Flash->error(__('Unable to add your post.'));
+            $this->Flash->error(__('Não foi possível salvar seu post. Por favor, tente novamente.'));
         }
     }
 
     public function edit($id = null) {
         if (!$id) {
-            throw new NotFoundException(__('Invalid post'));
+            throw new NotFoundException(__('Post inválido'));
         }
         $post = $this->Post->findById($id);
         if (!$post) {
-            throw new NotFoundException(__('Invalid post'));
+            throw new NotFoundException(__('Post inválido'));
         }
         if ($this->request->is(array('post', 'put'))) {
             $this->Post->id = $id;
             if ($this->Post->save($this->request->data)) {
-                $this->Flash->success(__('Your post has been updated.'));
+                $this->Flash->success(__('Seu post foi atualizado.'));
                 return $this->redirect(array('action' => 'index'));
             }
-            $this->Flash->error(__('Unable to update your post.'));
+            $this->Flash->error(__('Não foi possível atualizar seu post. Por favor, tente novamente.'));
         }
         if (!$this->request->data) {
             $this->request->data = $post;
@@ -57,11 +57,11 @@ class PostsController extends AppController {
         }
         if ($this->Post->delete($id)) {
             $this->Flash->success(
-                __('The post with id: %s has been deleted.', h($id))
+                __('O post com id: %s foi excluído.', h($id))
             );
         } else {
             $this->Flash->error(
-                __('The post with id: %s could not be deleted.', h($id))
+                __('O post com id: %s não pôde ser excluído.', h($id))
             );
         }
         return $this->redirect(array('action' => 'index'));
