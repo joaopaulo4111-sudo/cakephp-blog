@@ -7,12 +7,12 @@ class AppController extends Controller {
         'Flash',
         'Auth' => array(
             'loginRedirect' => array(
-                'controller' => 'posts',
+                'controller' => 'medicos',
                 'action' => 'index'
             ),
             'logoutRedirect' => array(
                 'controller' => 'users',
-                'action' => 'login',
+                'action' => 'login'
             ),
             'authenticate' => array(
                 'Form' => array(
