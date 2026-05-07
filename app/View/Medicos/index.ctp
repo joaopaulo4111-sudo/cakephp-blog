@@ -146,28 +146,28 @@
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
-                <?php echo $this->Form->create('Paciente', array('url' => array('controller' => 'pacientes', 'action' => 'add'))); ?>
-                <div class="mb-3">
-                    <label class="form-label fw-bold">Nome</label>
-                    <?php echo $this->Form->input('nome', array('label' => false, 'class' => 'form-control', 'placeholder' => 'Nome completo...')); ?>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label fw-bold">CPF</label>
-                    <?php echo $this->Form->input('cpf', array('label' => false, 'class' => 'form-control', 'placeholder' => 'Ex: 000.000.000-00')); ?>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label fw-bold">Data de Nascimento</label>
-                    <?php echo $this->Form->input('data_nascimento', array('label' => false, 'type' => 'date', 'class' => 'form-control', 'min' => '1900-01-01', 'max' => date('Y-m-d'))); ?>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label fw-bold">Email</label>
-                    <?php echo $this->Form->input('email', array('label' => false, 'class' => 'form-control', 'placeholder' => 'email@exemplo.com')); ?>
-                </div>
+                <form method="post" action="/cakephp-blog/pacientes/add">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Nome</label>
+                        <input type="text" name="data[Paciente][nome]" class="form-control" placeholder="Nome completo...">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">CPF</label>
+                        <input type="text" name="data[Paciente][cpf]" class="form-control" placeholder="Ex: 000.000.000-00">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Data de Nascimento</label>
+                        <input type="date" name="data[Paciente][data_nascimento]" class="form-control" min="1900-01-01" max="<?php echo date('Y-m-d'); ?>">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Email</label>
+                        <input type="email" name="data[Paciente][email]" class="form-control" placeholder="email@exemplo.com">
+                    </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <?php echo $this->Form->submit('Salvar', array('class' => 'btn btn-success')); ?>
-                <?php echo $this->Form->end(); ?>
+                <button type="submit" class="btn btn-success">Salvar</button>
+                </form>
             </div>
         </div>
     </div>
@@ -219,29 +219,29 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
-                <?php echo $this->Form->create('Paciente', array('url' => array('controller' => 'pacientes', 'action' => 'edit'))); ?>
-                <?php echo $this->Form->input('id', array('type' => 'hidden')); ?>
-                <div class="mb-3">
-                    <label class="form-label fw-bold">Nome</label>
-                    <?php echo $this->Form->input('nome', array('label' => false, 'class' => 'form-control')); ?>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label fw-bold">CPF</label>
-                    <?php echo $this->Form->input('cpf', array('label' => false, 'class' => 'form-control')); ?>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label fw-bold">Data de Nascimento</label>
-                    <?php echo $this->Form->input('data_nascimento', array('label' => false, 'type' => 'date', 'class' => 'form-control')); ?>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label fw-bold">Email</label>
-                    <?php echo $this->Form->input('email', array('label' => false, 'class' => 'form-control')); ?>
-                </div>
+                <form id="formEditPaciente" method="post" action="/cakephp-blog/pacientes/edit">
+                    <input type="hidden" name="data[Paciente][id]" id="edit-paciente-id">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Nome</label>
+                        <input type="text" name="data[Paciente][nome]" id="edit-paciente-nome" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">CPF</label>
+                        <input type="text" name="data[Paciente][cpf]" id="edit-paciente-cpf" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Data de Nascimento</label>
+                        <input type="date" name="data[Paciente][data_nascimento]" id="edit-paciente-nascimento" class="form-control" min="1900-01-01" max="<?php echo date('Y-m-d'); ?>">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Email</label>
+                        <input type="email" name="data[Paciente][email]" id="edit-paciente-email" class="form-control">
+                    </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <?php echo $this->Form->submit('Salvar', array('class' => 'btn btn-success')); ?>
-                <?php echo $this->Form->end(); ?>
+                <button type="submit" class="btn btn-success">Salvar</button>
+                </form>
             </div>
         </div>
     </div>
@@ -270,7 +270,6 @@
 <script>
 $(function() {
 
-    // Abre aba correta baseado na URL
     var urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('aba') === 'pacientes') {
         $('.nav-link[href="#medicos"]').removeClass('active');
@@ -281,13 +280,11 @@ $(function() {
 
     var urlParaExcluir = null;
 
-    // Quando clicar em excluir
     $(document).on('click', '.btn-excluir', function() {
         urlParaExcluir = $(this).data('url');
         $('#modalConfirmarExclusao').modal('show');
     });
 
-    // Quando confirmar no modal — usa POST
     $(document).on('click', '#btn-confirmar-exclusao', function() {
         if (urlParaExcluir) {
             var form = $('<form method="post" style="display:none"></form>');
@@ -309,11 +306,11 @@ $(function() {
 
     // EDITAR PACIENTE
     $(document).on('click', '.btn-editar-paciente', function() {
-        $('#modalEditPaciente input[name="data[Paciente][id]"]').val($(this).data('id'));
-        $('#modalEditPaciente input[name="data[Paciente][nome]"]').val($(this).data('nome'));
-        $('#modalEditPaciente input[name="data[Paciente][cpf]"]').val($(this).data('cpf'));
-        $('#modalEditPaciente input[name="data[Paciente][data_nascimento]"]').val($(this).data('nascimento'));
-        $('#modalEditPaciente input[name="data[Paciente][email]"]').val($(this).data('email'));
+        $('#edit-paciente-id').val($(this).data('id'));
+        $('#edit-paciente-nome').val($(this).data('nome'));
+        $('#edit-paciente-cpf').val($(this).data('cpf'));
+        $('#edit-paciente-nascimento').val($(this).data('nascimento'));
+        $('#edit-paciente-email').val($(this).data('email'));
         $('#modalEditPaciente').modal('show');
     });
 
