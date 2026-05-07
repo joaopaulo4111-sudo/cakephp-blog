@@ -101,23 +101,6 @@
 
 </div>
 
-<!-- Forms de delete escondidos -->
-<?php foreach ($medicos as $medico): ?>
-    <form id="form-delete-medico-<?php echo $medico['Medico']['id']; ?>"
-          action="/cakephp-blog/medicos/delete/<?php echo $medico['Medico']['id']; ?>"
-          method="post" style="display:none">
-        <input type="hidden" name="_method" value="POST">
-    </form>
-<?php endforeach; ?>
-
-<?php foreach ($pacientes as $paciente): ?>
-    <form id="form-delete-paciente-<?php echo $paciente['Paciente']['id']; ?>"
-          action="/cakephp-blog/pacientes/delete/<?php echo $paciente['Paciente']['id']; ?>"
-          method="post" style="display:none">
-        <input type="hidden" name="_method" value="POST">
-    </form>
-<?php endforeach; ?>
-
 <!-- Modal Adicionar Médico -->
 <div class="modal fade" id="modalAddMedico" tabindex="-1">
     <div class="modal-dialog">
@@ -174,7 +157,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label fw-bold">Data de Nascimento</label>
-                    <?php echo $this->Form->input('data_nascimento', array('label' => false,'type' => 'date','class' => 'form-control','min' => '1900-01-01','max' => date('Y-m-d'))); ?>
+                    <?php echo $this->Form->input('data_nascimento', array('label' => false, 'type' => 'date', 'class' => 'form-control', 'min' => '1900-01-01', 'max' => date('Y-m-d'))); ?>
                 </div>
                 <div class="mb-3">
                     <label class="form-label fw-bold">Email</label>
@@ -287,10 +270,14 @@
 <script>
 $(function() {
 
-    var urlParaExcluir = null;
-
-    // EXCLUIR (funciona 100%)
-   $(function() {
+    // Abre aba correta baseado na URL
+    var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('aba') === 'pacientes') {
+        $('.nav-link[href="#medicos"]').removeClass('active');
+        $('.nav-link[href="#pacientes"]').addClass('active');
+        $('#medicos').removeClass('show active');
+        $('#pacientes').addClass('show active');
+    }
 
     var urlParaExcluir = null;
 
@@ -300,14 +287,15 @@ $(function() {
         $('#modalConfirmarExclusao').modal('show');
     });
 
-    // Quando confirmar no modal
+    // Quando confirmar no modal — usa POST
     $(document).on('click', '#btn-confirmar-exclusao', function() {
         if (urlParaExcluir) {
-            window.location.href = urlParaExcluir;
+            var form = $('<form method="post" style="display:none"></form>');
+            form.attr('action', urlParaExcluir);
+            $('body').append(form);
+            form.submit();
         }
     });
-
-});
 
     // EDITAR MÉDICO
     $(document).on('click', '.btn-editar-medico', function() {
@@ -316,7 +304,6 @@ $(function() {
         $('#modalEditMedico input[name="data[Medico][crm]"]').val($(this).data('crm'));
         $('#modalEditMedico input[name="data[Medico][especialidade]"]').val($(this).data('especialidade'));
         $('#modalEditMedico input[name="data[Medico][email]"]').val($(this).data('email'));
-
         $('#modalEditMedico').modal('show');
     });
 
@@ -327,7 +314,6 @@ $(function() {
         $('#modalEditPaciente input[name="data[Paciente][cpf]"]').val($(this).data('cpf'));
         $('#modalEditPaciente input[name="data[Paciente][data_nascimento]"]').val($(this).data('nascimento'));
         $('#modalEditPaciente input[name="data[Paciente][email]"]').val($(this).data('email'));
-
         $('#modalEditPaciente').modal('show');
     });
 

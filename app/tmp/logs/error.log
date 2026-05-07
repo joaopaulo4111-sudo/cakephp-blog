@@ -642,3 +642,54 @@ Stack Trace:
 #3 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(MedicosController), Object(CakeRequest))
 #4 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #5 {main}
+2026-05-07 13:10:23 Error: [MissingViewException] View file "Medicos\index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Medicos\\index.ctp',
+)
+Request URL: /cakephp-blog/medicos
+Stack Trace:
+#0 C:\xampp\htdocs\cakephp-blog\lib\Cake\View\View.php(470): View->_getViewFileName('Medicos\\index')
+#1 C:\xampp\htdocs\cakephp-blog\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(MedicosController), Object(CakeRequest))
+#4 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2026-05-07 13:20:34 Error: [MethodNotAllowedException] Method Not Allowed
+Request URL: /cakephp-blog/medicos/delete/4
+Stack Trace:
+#0 [internal function]: MedicosController->delete('4')
+#1 C:\xampp\htdocs\cakephp-blog\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(MedicosController), Array)
+#2 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(MedicosController), Object(CakeRequest))
+#4 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2026-05-07 13:21:29 Error: [MethodNotAllowedException] Method Not Allowed
+Request URL: /cakephp-blog/medicos/delete/4
+Stack Trace:
+#0 C:\xampp\htdocs\cakephp-blog\app\Controller\MedicosController.php(64): CakeRequest->allowMethod(Array, 'delete')
+#1 [internal function]: MedicosController->delete('4')
+#2 C:\xampp\htdocs\cakephp-blog\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(MedicosController), Array)
+#3 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#4 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(MedicosController), Object(CakeRequest))
+#5 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2026-05-07 13:21:35 Error: [MethodNotAllowedException] Method Not Allowed
+Request URL: /cakephp-blog/medicos/delete/3
+Stack Trace:
+#0 C:\xampp\htdocs\cakephp-blog\app\Controller\MedicosController.php(64): CakeRequest->allowMethod(Array, 'delete')
+#1 [internal function]: MedicosController->delete('3')
+#2 C:\xampp\htdocs\cakephp-blog\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(MedicosController), Array)
+#3 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#4 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(MedicosController), Object(CakeRequest))
+#5 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2026-05-07 13:24:20 Error: [MethodNotAllowedException] Method Not Allowed
+Request URL: /cakephp-blog/medicos/delete/1
+Stack Trace:
+#0 C:\xampp\htdocs\cakephp-blog\app\Controller\MedicosController.php(64): CakeRequest->allowMethod(Array, 'delete')
+#1 [internal function]: MedicosController->delete('1')
+#2 C:\xampp\htdocs\cakephp-blog\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(MedicosController), Array)
+#3 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#4 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(MedicosController), Object(CakeRequest))
+#5 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
