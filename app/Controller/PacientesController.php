@@ -14,10 +14,11 @@ class PacientesController extends AppController {
             $this->Paciente->create();
             if ($this->Paciente->save($this->request->data)) {
                 $this->Flash->success(__('Paciente cadastrado com sucesso!'));
-                return $this->redirect(array('controller' => 'medicos', 'action' => 'index', '?' => array('aba' => 'pacientes')));
+            } else {
+                $this->Flash->error(__('Erro ao cadastrar paciente.'));
             }
-            $this->Flash->error(__('Erro ao cadastrar paciente.'));
         }
+        return $this->redirect(array('controller' => 'home', 'action' => 'index'));
     }
 
     public function edit($id = null) {
@@ -39,9 +40,10 @@ class PacientesController extends AppController {
             $this->Paciente->id = $id;
             if ($this->Paciente->save($this->request->data)) {
                 $this->Flash->success(__('Paciente atualizado com sucesso!'));
-                return $this->redirect(array('controller' => 'medicos', 'action' => 'index', '?' => array('aba' => 'pacientes')));
+            } else {
+                $this->Flash->error(__('Erro ao atualizar paciente.'));
             }
-            $this->Flash->error(__('Erro ao atualizar paciente.'));
+            return $this->redirect(array('controller' => 'home', 'action' => 'index'));
         }
 
         if (!$this->request->data) {
@@ -57,7 +59,7 @@ class PacientesController extends AppController {
                 $this->Flash->error(__('Erro ao excluir paciente.'));
             }
         }
-        return $this->redirect(array('controller' => 'medicos', 'action' => 'index', '?' => array('aba' => 'pacientes')));
+        return $this->redirect(array('controller' => 'home', 'action' => 'index'));
     }
 }
 ?>
