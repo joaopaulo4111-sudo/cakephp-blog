@@ -37,9 +37,10 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <?php echo $this->Html->link(
                         '← Voltar',
-                        array('controller' => 'posts', 'action' => 'index'),
+                        array('controller' => 'users', 'action' => 'login'),
                         array('class' => 'btn btn-secondary')
                     ); ?>
+
                     <?php echo $this->Form->submit('Criar conta', array('class' => 'btn btn-success')); ?>
                     <?php echo $this->Form->end(); ?>
                 </div>

@@ -693,3 +693,212 @@ Stack Trace:
 #4 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(MedicosController), Object(CakeRequest))
 #5 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #6 {main}
+2026-05-07 14:08:42 Error: [MissingControllerException] Controller class PostsController could not be found.
+Exception Attributes: array (
+  'class' => 'PostsController',
+  'plugin' => NULL,
+)
+Request URL: /cakephp-blog/posts
+Stack Trace:
+#0 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-05-07 14:30:43 Error: [MissingControllerException] Controller class PostsController could not be found.
+Exception Attributes: array (
+  'class' => 'PostsController',
+  'plugin' => NULL,
+)
+Request URL: /cakephp-blog/posts
+Stack Trace:
+#0 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-05-07 16:23:02 Error: [MissingControllerException] Controller class Cakephp-blogController could not be found.
+Exception Attributes: array (
+  'class' => 'Cakephp-blogController',
+  'plugin' => NULL,
+)
+Request URL: /cakephp-blog/cakephp-blog/medicos
+Stack Trace:
+#0 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-05-07 16:34:17 Error: [MissingControllerException] Controller class Ho,meController could not be found.
+Exception Attributes: array (
+  'class' => 'Ho,meController',
+  'plugin' => NULL,
+)
+Request URL: /cakephp-blog/ho,me
+Stack Trace:
+#0 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-05-07 16:43:10 Error: [NotFoundException] Médico inválido
+Request URL: /cakephp-blog/medicos/edit
+Stack Trace:
+#0 [internal function]: MedicosController->edit()
+#1 C:\xampp\htdocs\cakephp-blog\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(MedicosController), Array)
+#2 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(MedicosController), Object(CakeRequest))
+#4 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2026-05-07 16:43:26 Error: [NotFoundException] Médico inválido
+Request URL: /cakephp-blog/medicos/edit
+Stack Trace:
+#0 [internal function]: MedicosController->edit()
+#1 C:\xampp\htdocs\cakephp-blog\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(MedicosController), Array)
+#2 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(MedicosController), Object(CakeRequest))
+#4 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2026-05-08 15:09:57 Error: [NotFoundException] Paciente inválido
+Request URL: /cakephp-blog/pacientes/edit
+Stack Trace:
+#0 [internal function]: PacientesController->edit()
+#1 C:\xampp\htdocs\cakephp-blog\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(PacientesController), Array)
+#2 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PacientesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2026-05-12 13:16:00 Error: [MissingControllerException] Controller class Medicos.ctpController could not be found.
+Exception Attributes: array (
+  'class' => 'Medicos.ctpController',
+  'plugin' => NULL,
+)
+Request URL: /cakephp-blog/medicos.ctp
+Stack Trace:
+#0 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2026-05-12 13:16:59 Error: [MissingViewException] View file "Medicos\index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Medicos\\index.ctp',
+)
+Request URL: /cakephp-blog/medicos
+Stack Trace:
+#0 C:\xampp\htdocs\cakephp-blog\lib\Cake\View\View.php(470): View->_getViewFileName('Medicos\\index')
+#1 C:\xampp\htdocs\cakephp-blog\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(MedicosController), Object(CakeRequest))
+#4 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2026-05-12 13:22:05 Error: [MissingViewException] View file "Medicos\index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Medicos\\index.ctp',
+)
+Request URL: /cakephp-blog/medicos
+Stack Trace:
+#0 C:\xampp\htdocs\cakephp-blog\lib\Cake\View\View.php(470): View->_getViewFileName('Medicos\\index')
+#1 C:\xampp\htdocs\cakephp-blog\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(MedicosController), Object(CakeRequest))
+#4 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2026-05-12 18:25:22 Error: [NotFoundException] Paciente inválido
+Request URL: /cakephp-blog/pacientes/edit
+Stack Trace:
+#0 [internal function]: PacientesController->edit()
+#1 C:\xampp\htdocs\cakephp-blog\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(PacientesController), Array)
+#2 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(PacientesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2026-05-12 18:40:03 Error: [MissingActionException] Action HomeController::pacientes() could not be found.
+Exception Attributes: array (
+  'controller' => 'HomeController',
+  'action' => 'pacientes',
+)
+Request URL: /cakephp-blog/home/pacientes/index
+Stack Trace:
+#0 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(HomeController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2026-05-12 18:40:54 Error: [MissingActionException] Action HomeController::pacientes() could not be found.
+Exception Attributes: array (
+  'controller' => 'HomeController',
+  'action' => 'pacientes',
+)
+Request URL: /cakephp-blog/home/pacientes/index
+Stack Trace:
+#0 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(HomeController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2026-05-12 18:40:57 Error: [MissingActionException] Action HomeController::pacientes() could not be found.
+Exception Attributes: array (
+  'controller' => 'HomeController',
+  'action' => 'pacientes',
+)
+Request URL: /cakephp-blog/home/pacientes
+Stack Trace:
+#0 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(HomeController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2026-05-12 18:41:46 Error: [MissingActionException] Action HomeController::pacientes() could not be found.
+Exception Attributes: array (
+  'controller' => 'HomeController',
+  'action' => 'pacientes',
+)
+Request URL: /cakephp-blog/home/pacientes
+Stack Trace:
+#0 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(HomeController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2026-05-12 18:43:08 Error: [MissingActionException] Action HomeController::pacientes() could not be found.
+Exception Attributes: array (
+  'controller' => 'HomeController',
+  'action' => 'pacientes',
+)
+Request URL: /cakephp-blog/home/pacientes/index.ctp
+Stack Trace:
+#0 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(HomeController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2026-05-12 18:44:41 Error: [MissingViewException] View file "Home\pacientes.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Home\\pacientes.ctp',
+)
+Request URL: /cakephp-blog/home/pacientes
+Stack Trace:
+#0 C:\xampp\htdocs\cakephp-blog\lib\Cake\View\View.php(470): View->_getViewFileName('Home\\pacientes')
+#1 C:\xampp\htdocs\cakephp-blog\lib\Cake\Controller\Controller.php(968): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(HomeController), Object(CakeRequest))
+#4 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2026-05-12 18:46:02 Error: [MissingViewException] View file "Home\pacientes\index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Home\\pacientes\\index.ctp',
+)
+Request URL: /cakephp-blog/home/pacientes
+Stack Trace:
+#0 C:\xampp\htdocs\cakephp-blog\lib\Cake\View\View.php(470): View->_getViewFileName('Home\\pacientes\\...')
+#1 C:\xampp\htdocs\cakephp-blog\lib\Cake\Controller\Controller.php(968): View->render('pacientes/index', NULL)
+#2 C:\xampp\htdocs\cakephp-blog\app\Controller\HomeController.php(24): Controller->render('pacientes/index')
+#3 [internal function]: HomeController->pacientes()
+#4 C:\xampp\htdocs\cakephp-blog\lib\Cake\Controller\Controller.php(499): ReflectionMethod->invokeArgs(Object(HomeController), Array)
+#5 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(HomeController), Object(CakeRequest))
+#7 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2026-05-12 18:47:15 Error: [MissingActionException] Action HomeController::pacientes() could not be found.
+Exception Attributes: array (
+  'controller' => 'HomeController',
+  'action' => 'pacientes',
+)
+Request URL: /cakephp-blog/home/pacientes
+Stack Trace:
+#0 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(HomeController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2026-05-12 18:47:17 Error: [MissingActionException] Action HomeController::pacientes() could not be found.
+Exception Attributes: array (
+  'controller' => 'HomeController',
+  'action' => 'pacientes',
+)
+Request URL: /cakephp-blog/home/pacientes
+Stack Trace:
+#0 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\cakephp-blog\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(HomeController), Object(CakeRequest))
+#2 C:\xampp\htdocs\cakephp-blog\app\webroot\index.php(115): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
