@@ -27,18 +27,22 @@ $cakeDescription = 'Sistema Médico';
 <nav class="navbar navbar-dark bg-dark mb-4">
     <div class="container">
         <a class="navbar-brand" href="/cakephp-blog/">Sistema Médico</a>
-    <ul class="nav mb-0" id="abas-nav">
-    <li class="nav-item">
-        <a class="nav-link text-white px-4 py-2" href="#medicos" data-bs-toggle="tab" data-bs-target="#medicos">
-             Médicos
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-white px-4 py-2" href="#pacientes" data-bs-toggle="tab" data-bs-target="#pacientes">
-             Pacientes
-        </a>
-    </li>
-    </ul>
+
+        <?php if ($this->Session->read('Auth.User')): ?>
+        <ul class="nav mb-0" id="abas-nav">
+            <li class="nav-item">
+                <a class="nav-link text-white px-4 py-2" href="#medicos" data-bs-toggle="tab" data-bs-target="#medicos">
+                    Médicos
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white px-4 py-2" href="#pacientes" data-bs-toggle="tab" data-bs-target="#pacientes">
+                    Pacientes
+                </a>
+            </li>
+        </ul>
+        <?php endif; ?>
+
         <div>
             <?php if ($this->Session->read('Auth.User')): ?>
                 <span class="text-white me-3">
@@ -59,7 +63,6 @@ $cakeDescription = 'Sistema Médico';
         </div>
     </div>
 </nav>
-
 <!-- CONTEÚDO -->
 <div class="container" id="content">
 
