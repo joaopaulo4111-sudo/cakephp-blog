@@ -1,5 +1,8 @@
 $(function() {
+
+    // ================================
     // MOSTRAR ALERTA NA TELA
+    // ================================
     window.mostrarAlerta = function(tipo, mensagem) {
         var html = '<div class="alert alert-' + tipo + ' alert-dismissible fade show" role="alert">';
         html += mensagem;
