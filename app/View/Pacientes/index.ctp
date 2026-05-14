@@ -4,7 +4,7 @@
         + Novo Paciente
     </button>
 </div>
-<table class="table table-striped table-hover">
+<table id="tabela-pacientes" class="table table-striped table-hover">
     <thead class="table-dark">
         <tr>
             <th>Nome</th>
@@ -30,8 +30,8 @@
                     data-email="<?php echo $paciente['Paciente']['email']; ?>">
                     Editar
                 </button>
-                <button class="btn btn-sm btn-danger btn-excluir"
-                    data-url="/cakephp-blog/pacientes/delete/<?php echo $paciente['Paciente']['id']; ?>">
+                <button class="btn btn-sm btn-danger btn-excluir-paciente"
+                    data-id="<?php echo $paciente['Paciente']['id']; ?>">
                     Excluir
                 </button>
             </td>
@@ -39,16 +39,17 @@
         <?php endforeach; ?>
     </tbody>
 </table>
+
 <!-- Modal Adicionar Paciente -->
 <div class="modal fade" id="modalAddPaciente" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header bg-dark text-white">
-                <h5 class="modal-title">Novo Paciente</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <form method="post" action="/cakephp-blog/pacientes/add">
+            <form id="formAddPaciente">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title">Novo Paciente</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
                     <div class="mb-3">
                         <label class="form-label fw-bold">Nome</label>
                         <input type="text" name="data[Paciente][nome]" class="form-control" placeholder="Nome completo...">
@@ -65,12 +66,12 @@
                         <label class="form-label fw-bold">Email</label>
                         <input type="email" name="data[Paciente][email]" class="form-control" placeholder="email@exemplo.com">
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-success">Salvar</button>
-                    </div>
-                </form>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-success">Salvar</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -79,12 +80,12 @@
 <div class="modal fade" id="modalEditPaciente" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header bg-warning">
-                <h5 class="modal-title">Editar Paciente</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <form method="post" action="/cakephp-blog/pacientes/edit">
+            <form id="formEditPaciente">
+                <div class="modal-header bg-warning">
+                    <h5 class="modal-title">Editar Paciente</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
                     <input type="hidden" name="data[Paciente][id]" id="edit-paciente-id">
                     <div class="mb-3">
                         <label class="form-label fw-bold">Nome</label>
@@ -102,11 +103,30 @@
                         <label class="form-label fw-bold">Email</label>
                         <input type="email" name="data[Paciente][email]" id="edit-paciente-email" class="form-control">
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-success">Salvar</button>
-                    </div>
-                </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-success">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Confirmar Exclusão -->
+<div class="modal fade" id="modalConfirmarExclusaoPaciente" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title">Confirmar Exclusão</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-center">
+                <p>Tem certeza que deseja excluir este registro?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="btn-confirmar-exclusao-paciente">Excluir</button>
             </div>
         </div>
     </div>

@@ -1,3 +1,8 @@
+<!-- Área onde os alertas AJAX aparecem -->
+<div id="area-alertas"></div>
+
+<!-- div principal que recebe o conteúdo -->
+<div id="content">
 <div id="content" class="tab-content">
 
     <!-- ABA MÉDICOS -->

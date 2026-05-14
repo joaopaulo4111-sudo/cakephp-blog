@@ -1,8 +1,6 @@
 $(function() {
 
-    // ================================
     // FUNÇÃO QUE REDESENHA A TABELA
-    // ================================
     function atualizarTabelaPacientes() {
         $.ajax({
             url: '/cakephp-blog/pacientes/ajaxLista',
@@ -36,10 +34,7 @@ $(function() {
             }
         });
     }
-
-    // ================================
     // ADICIONAR PACIENTE
-    // ================================
     $(document).on('submit', '#formAddPaciente', function(e) {
         e.preventDefault(); // impede recarregar a página
 
@@ -61,10 +56,8 @@ $(function() {
         });
     });
 
-    // ================================
     // ABRIR MODAL EDITAR PACIENTE
-    // ================================
-    $(document).on('click', '.btn-editar-paciente', function() {
+       $(document).on('click', '.btn-editar-paciente', function() {
         $('#edit-paciente-id').val($(this).data('id'));
         $('#edit-paciente-nome').val($(this).data('nome'));
         $('#edit-paciente-cpf').val($(this).data('cpf'));
@@ -73,9 +66,7 @@ $(function() {
         $('#modalEditPaciente').modal('show');
     });
 
-    // ================================
     // SALVAR EDIÇÃO PACIENTE
-    // ================================
     $(document).on('submit', '#formEditPaciente', function(e) {
         e.preventDefault();
 
@@ -96,24 +87,22 @@ $(function() {
         });
     });
 
-    // ================================
     // EXCLUIR PACIENTE
-    // ================================
     var idParaExcluirPaciente = null;
 
     $(document).on('click', '.btn-excluir-paciente', function() {
         idParaExcluirPaciente = $(this).data('id');
-        $('#modalConfirmarExclusao').modal('show');
+        $('#modalConfirmarExclusaoPaciente').modal('show');
     });
 
-    $(document).on('click', '#btn-confirmar-exclusao', function() {
+    $(document).on('click', '#btn-confirmar-exclusao-paciente', function() {
         if (idParaExcluirPaciente) {
             $.ajax({
                 url: '/cakephp-blog/pacientes/ajaxDelete/' + idParaExcluirPaciente,
                 type: 'POST',
                 dataType: 'json',
                 success: function(resp) {
-                    $('#modalConfirmarExclusao').modal('hide');
+                    $('#modalConfirmarExclusaoPaciente').modal('hide');
                     idParaExcluirPaciente = null;
                     atualizarTabelaPacientes();
                     mostrarAlerta('success', resp.mensagem);
